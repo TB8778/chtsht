@@ -4,19 +4,25 @@ import Code from './Code';
 import { Accordion, AccordionDetails, AccordionSummary, Typography } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-const code = `const App = props => {
-  return (
-    <div>
-      <h1> React App </h1>
-      <div>Awesome code</div>
-    </div>
-  );
-};
+import { ImportHighlightJs } from './ImportHighlightJs';
+
+const code = `INSERT [dbo].[TableToInsert] ([Name], [Description], [CreatedBy], [CreatedOn])
+SELECT x.[Name], x.[Description], 1, GETUTCDATE()
+FROM (
+    SELECT  N'My name 1' AS 'Name', N'My description 1' AS 'Description'
+    UNION
+    SELECT  N'My name 2', N'My description 2'
+    UNION
+    SELECT  N'My name 3', N'My description 3'
+) x
+LEFT JOIN [dbo].[TableToInsert] t ON t.[Name] = x.[Name]
+WHERE t.[Name] IS NULL
 `;
 
 function App() {
   return (
     <div className="App">
+      <ImportHighlightJs></ImportHighlightJs>
       <header className="App-header">
         <nav>
           <div>
@@ -49,10 +55,10 @@ function App() {
         <h1 id="SQL-anchor">SQL</h1>
         <Accordion>
           <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
-            <Typography>Accordion 1</Typography>
+            <Typography>INSERT UNION</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Code code={code} language="javascript" />
+            <Code code={code} language="sql" />
           </AccordionDetails>
         </Accordion>
         <Accordion>
