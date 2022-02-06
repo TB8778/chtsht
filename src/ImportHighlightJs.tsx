@@ -8,6 +8,7 @@ import typescript from 'highlight.js/lib/languages/typescript';
 import css from 'highlight.js/lib/languages/css';
 import scss from 'highlight.js/lib/languages/scss';
 import csharp from 'highlight.js/lib/languages/csharp';
+import './highlightjs-copy.css';
 
 hljs.registerLanguage('sql', sql);
 hljs.registerLanguage('shell', shell);
@@ -17,6 +18,44 @@ hljs.registerLanguage('typescript', typescript);
 hljs.registerLanguage('css', css);
 hljs.registerLanguage('scss', scss);
 hljs.registerLanguage('csharp', csharp);
+
+hljs.addPlugin({
+  'after:highlightElement': ({ el, text }: any) => {
+    let button = Object.assign(document.createElement('button'), { innerHTML: 'Copy', className: 'hljs-copy-button' });
+    button.dataset.copied = false as any;
+    el.parentElement.classList.add('hljs-copy-wrapper');
+    el.parentElement.appendChild(button);
+    el.parentElement.style.setProperty('--hljs-theme-background', window.getComputedStyle(el).backgroundColor);
+    button.onclick = () => {
+      if (!navigator.clipboard) return;
+      let newText = text;
+      // if (hook && typeof hook === 'function') {
+      //   newText = hook(text, el) || text;
+      // }
+      navigator.clipboard
+        .writeText(newText)
+        .then(function () {
+          button.innerHTML = 'Copied!';
+          button.dataset.copied = true as any;
+          let alert = Object.assign(document.createElement('div'), {
+            role: 'status',
+            className: 'hljs-copy-alert',
+            innerHTML: 'Copied to clipboard',
+          });
+          el.parentElement.appendChild(alert);
+          setTimeout(() => {
+            button.innerHTML = 'Copy';
+            button.dataset.copied = false as any;
+            el.parentElement.removeChild(alert);
+            alert = null as any;
+          }, 2e3);
+        })
+        .then(function () {
+          // if (typeof callback === 'function') return callback(newText, el);
+        });
+    };
+  },
+});
 
 export function ImportHighlightJs() {
   return null;
