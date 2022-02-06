@@ -1,11 +1,11 @@
-INSERT [dbo].[Parameters] ([Code], [Description], [Value], [CreatedBy], [UpdatedBy])
-SELECT x.[Code], x.[Description], x.[InitialValue], @defaultUser, @defaultUser
+INSERT [dbo].[Parameters] ([Name], [Description], [CreatedBy], [CreatedOn])
+SELECT x.[Name], x.[Description], 1, GETUTCDATE()
 FROM (
-	SELECT  N'PERFORMANCE_FILEPATH' AS 'Code', N'Filepath of performances analizor tool' AS 'Description', N'UNSET' AS 'InitialValue'
+	SELECT  N'My name 1' AS 'Name', N'My description 1' AS 'Description'
     UNION
-    SELECT  N'PERFORMANCE_FILEPATH', N'Filepath of performances analizor tool', N'UNSET'
+    SELECT  N'My name 2', N'My description 2'
     UNION
-    SELECT  N'PERFORMANCE_RUN_FLAG', N'Execute a performance 0 or 1 ', N'UNSET'
+    SELECT  N'My name 3', N'My description 3'
 ) x
-LEFT JOIN [dbo].[Parameters] p ON p.[Code] = x.[Code]
-WHERE p.[Code] IS NULL
+LEFT JOIN [dbo].[TableToInsert] t ON t.[Name] = x.[Name]
+WHERE t.[Name] IS NULL
