@@ -1,11 +1,3 @@
-INSERT [dbo].[Parameters] ([Name], [Description], [CreatedBy], [CreatedOn])
-SELECT x.[Name], x.[Description], 1, GETUTCDATE()
-FROM (
-	SELECT  N'My name 1' AS 'Name', N'My description 1' AS 'Description'
-    UNION
-    SELECT  N'My name 2', N'My description 2'
-    UNION
-    SELECT  N'My name 3', N'My description 3'
-) x
-LEFT JOIN [dbo].[TableToInsert] t ON t.[Name] = x.[Name]
-WHERE t.[Name] IS NULL
+powershell : foreach line of file
+
+shell : foreach line of file
