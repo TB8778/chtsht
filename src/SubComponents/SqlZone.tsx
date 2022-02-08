@@ -3,9 +3,10 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Code from '../Code';
 import React from 'react';
 
-const lang = 'sql';
+export function SqlZone() {
+  const lang = 'sql';
 
-const code1 = `INSERT [dbo].[TableToInsert] ([Name], [Description], [CreatedBy], [CreatedOn])
+  const code1 = `INSERT [dbo].[TableToInsert] ([Name], [Description], [CreatedBy], [CreatedOn])
 SELECT x.[Name], x.[Description], 1, GETUTCDATE()
 FROM (
     SELECT  N'My name 1' AS 'Name', N'My description 1' AS 'Description'
@@ -18,9 +19,7 @@ LEFT JOIN [dbo].[TableToInsert] t ON t.[Name] = x.[Name]
 WHERE t.[Name] IS NULL
 `;
 
-const code2 = '';
-
-export function SqlZone() {
+  const code2 = '';
   return (
     <React.Fragment>
       <h4 id="SQL-anchor">SQL</h4>
@@ -33,7 +32,7 @@ export function SqlZone() {
         </AccordionDetails>
       </Accordion>
       <Accordion>
-        <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel2a-content" id="panel2a-header">
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography>Accordion 2</Typography>
         </AccordionSummary>
         <AccordionDetails>

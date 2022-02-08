@@ -3,11 +3,9 @@ import { Accordion, AccordionDetails, AccordionSummary, Typography } from '@mui/
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Code from '../Code';
 
-const lang = 'css';
-
-const code1 = ``;
-
 export function CssZone() {
+  const lang = 'css';
+  const code1 = ``;
   return (
     <React.Fragment>
       <h4 id="CSS-anchor">CSS</h4>

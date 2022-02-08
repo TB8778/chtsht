@@ -3,11 +3,9 @@ import { Accordion, AccordionDetails, AccordionSummary, Typography } from '@mui/
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Code from '../Code';
 
-const lang = 'csharp';
-
-const code1 = ``;
-
 export function DotnetZone() {
+  const lang = 'csharp';
+  const code1 = ``;
   return (
     <React.Fragment>
       <h4 id="NET-anchor">.NET</h4>
