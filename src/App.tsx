@@ -1,16 +1,16 @@
 import React from 'react';
 import './App.css';
-import { DockerZone } from './DockerZone';
+import { DockerZone } from './SubComponents/DockerZone';
 
 import { ImportHighlightJs } from './ImportHighlightJs';
-import { PowerShellZone } from './PowerShellZone';
-import { SqlZone } from './SqlZone';
-import { ShellZone } from './ShellZone';
-import { DotnetZone } from './DotnetZone';
-import { AngularZone } from './AngularZone';
-import { JsZone } from './JsZone';
-import { CssZone } from './CssZone';
-import { HtmlZone } from './HtmlZone';
+import { PowerShellZone } from './SubComponents/PowerShellZone';
+import { SqlZone } from './SubComponents/SqlZone';
+import { ShellZone } from './SubComponents/ShellZone';
+import { DotnetZone } from './SubComponents/DotnetZone';
+import { AngularZone } from './SubComponents/AngularZone';
+import { JsZone } from './SubComponents/JsZone';
+import { CssZone } from './SubComponents/CssZone';
+import { HtmlZone } from './SubComponents/HtmlZone';
 
 function App() {
   return (

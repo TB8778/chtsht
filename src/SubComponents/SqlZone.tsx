@@ -1,6 +1,6 @@
 import { Accordion, AccordionDetails, AccordionSummary, Typography } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import Code from './Code';
+import Code from '../Code';
 import React from 'react';
 
 const lang = 'sql';
@@ -25,7 +25,7 @@ export function SqlZone() {
     <React.Fragment>
       <h4 id="SQL-anchor">SQL</h4>
       <Accordion>
-        <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography>INSERT UNION</Typography>
         </AccordionSummary>
         <AccordionDetails>

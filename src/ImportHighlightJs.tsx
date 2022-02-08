@@ -8,6 +8,7 @@ import typescript from 'highlight.js/lib/languages/typescript';
 import css from 'highlight.js/lib/languages/css';
 import scss from 'highlight.js/lib/languages/scss';
 import csharp from 'highlight.js/lib/languages/csharp';
+import php from 'highlight.js/lib/languages/php';
 import './highlightjs-copy.css';
 
 hljs.registerLanguage('sql', sql);
@@ -18,6 +19,7 @@ hljs.registerLanguage('typescript', typescript);
 hljs.registerLanguage('css', css);
 hljs.registerLanguage('scss', scss);
 hljs.registerLanguage('csharp', csharp);
+hljs.registerLanguage('php', php);
 
 hljs.addPlugin({
   'after:highlightElement': ({ el, text }: any) => {
