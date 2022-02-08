@@ -1,8 +1,16 @@
 import React from 'react';
 import './App.css';
+import { DockerZone } from './DockerZone';
 
 import { ImportHighlightJs } from './ImportHighlightJs';
+import { PowerShellZone } from './PowerShellZone';
 import { SqlZone } from './SqlZone';
+import { ShellZone } from './ShellZone';
+import { DotnetZone } from './DotnetZone';
+import { AngularZone } from './AngularZone';
+import { JsZone } from './JsZone';
+import { CssZone } from './CssZone';
+import { HtmlZone } from './HtmlZone';
 
 function App() {
   return (
@@ -31,14 +39,14 @@ function App() {
       </header>
 
       <div className="content">
-        <h4 id="HTML-anchor">HTML</h4>
-        <h4 id="CSS-anchor">CSS</h4>
-        <h4 id="JS-anchor">JS</h4>
-        <h4 id="Angular-anchor">Angular</h4>
-        <h4 id="NET-anchor">.NET</h4>
-        <h4 id="Shell-anchor">Shell</h4>
-        <h4 id="PowerShell-anchor">PowerShell</h4>
-        <h4 id="Docker-anchor">Docker</h4>
+        <HtmlZone></HtmlZone>
+        <CssZone></CssZone>
+        <JsZone></JsZone>
+        <AngularZone></AngularZone>
+        <DotnetZone></DotnetZone>
+        <ShellZone></ShellZone>
+        <PowerShellZone></PowerShellZone>
+        <DockerZone></DockerZone>
         <SqlZone></SqlZone>
       </div>
     </div>
