@@ -31,14 +31,14 @@ function App() {
       </header>
 
       <div className="content">
-        <h1 id="HTML-anchor">HTML</h1>
-        <h1 id="CSS-anchor">CSS</h1>
-        <h1 id="JS-anchor">JS</h1>
-        <h1 id="Angular-anchor">Angular</h1>
-        <h1 id="NET-anchor">.NET</h1>
-        <h1 id="Shell-anchor">Shell</h1>
-        <h1 id="PowerShell-anchor">PowerShell</h1>
-        <h1 id="Docker-anchor">Docker</h1>
+        <h4 id="HTML-anchor">HTML</h4>
+        <h4 id="CSS-anchor">CSS</h4>
+        <h4 id="JS-anchor">JS</h4>
+        <h4 id="Angular-anchor">Angular</h4>
+        <h4 id="NET-anchor">.NET</h4>
+        <h4 id="Shell-anchor">Shell</h4>
+        <h4 id="PowerShell-anchor">PowerShell</h4>
+        <h4 id="Docker-anchor">Docker</h4>
         <SqlZone></SqlZone>
       </div>
     </div>

@@ -23,7 +23,7 @@ const code2 = '';
 export function SqlZone() {
   return (
     <React.Fragment>
-      <h1 id="SQL-anchor">SQL</h1>
+      <h4 id="SQL-anchor">SQL</h4>
       <Accordion>
         <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
           <Typography>INSERT UNION</Typography>

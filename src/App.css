@@ -1,4 +1,4 @@
-.App h1 {
+.App:first-child {
     text-align: center;
 }
 
